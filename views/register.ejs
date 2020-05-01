@@ -1,0 +1,50 @@
+<%- include("./partials/header") %> 
+
+    <div class="well">
+        <div class="row">
+            <div class="col-md-6 col-xs-6">
+                    <h1 >Register</h1>
+                    <div style="width: 60%; margin:25px auto; margin-left: 0;" >
+                            <form action="/register" method="POST" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <input class="form-control" type="text" name="username" placeholder="Username">
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" type="text" name="user[firstName]" placeholder="First Name">
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" type="text" name="user[lastName]" placeholder="Last Name">
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" type="email" name="user[email]" placeholder="Email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="avatar">Avatar:</label>
+                                    <input class="form-control" type="file" accept="image/*" name="avatar" id="avatar" required>
+                                </div>
+                                <div class="form-group">
+                                                <input class="form-control" type="password" name="password" placeholder="Password">
+                                </div>
+                                <div class="form-group">
+                                        <input class="form-control" type="text" name="adminCode" placeholder="Secret Code">
+                                        <em>*Ignore if you are a regular user</em>
+                                </div>
+                                <div class="form-group">
+                                        <button class="btn btn-success">Sign Up</button>
+                                </div>
+                            </form>
+                        </div>
+            </div>
+            <div class="col-md-6 col-xs-6">
+                <div id="regpagehead" >
+                    <h1>JOIN YELPCAMP</h1>
+                </div>
+            </div>
+        </div>
+            
+        
+    </div>
+    
+
+
+<%- include("./partials/footer") %> 

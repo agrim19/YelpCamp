@@ -1,0 +1,16 @@
+<%- include("./partials/header") %> 
+<div class="row">
+    <div class="col-md-12">
+        <form action="/forgot" method="POST">
+            <legend>FORGOT PASSWORD</legend>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" class="form-control">
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Get Link" class="btn btn-primary btn-block">
+            </div>
+        </form>
+    </div>
+</div>
+<%- include("./partials/footer") %> 
