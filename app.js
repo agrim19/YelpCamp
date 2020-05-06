@@ -18,7 +18,7 @@ var campgroundRoutes=require("./routes/campgrounds");
     indexRoutes=require("./routes/index");
 
 // seedDB();        //seed the database
-mongoose.connect("mongodb+srv://agrim:Superman@123@cluster0-kp0gc.mongodb.net/test?retryWrites=true&w=majority", {useNewUrlParser:true,useUnifiedTopology:true}).then(()=>{
+mongoose.connect("mongodb+srv://agrim:"+process.env.MONGODBPASSWORD+"@cluster0-kp0gc.mongodb.net/test?retryWrites=true&w=majority", {useNewUrlParser:true,useUnifiedTopology:true}).then(()=>{
     console.log("connected to DB");
 }).catch(err=>{
     console.log("ERROR ",err.message);
