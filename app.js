@@ -24,7 +24,11 @@ app.use(express.static(__dirname+"/public"));           //tells express to serve
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(methodOverride("_method"));
 app.use(flash());
-mongoose.set('useFindAndModify',false);
+mongoose.connect("mongodb+srv://agrim:"+process.env.MONGODBPASSWORD+"@cluster0-kp0gc.mongodb.net/test?retryWrites=true&w=majority", {useNewUrlParser:true,useUnifiedTopology:true}).then(()=>{
+    console.log("connected to DB");
+}).catch(err=>{
+    console.log("ERROR ",err.message);
+});
 
 //moment js config
 app.locals.moment= require("moment");
