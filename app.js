@@ -18,17 +18,18 @@ var campgroundRoutes=require("./routes/campgrounds");
     indexRoutes=require("./routes/index");
 
 // seedDB();        //seed the database
-mongoose.connect("mongodb://localhost:27017/yelp_camp_v12", {useNewUrlParser:true,useUnifiedTopology:true});
-app.set("view engine","ejs");
-app.use(express.static(__dirname+"/public"));           //tells express to serve from the public folder too
-app.use(bodyParser.urlencoded({extended:true}));
-app.use(methodOverride("_method"));
-app.use(flash());
 mongoose.connect("mongodb+srv://agrim:"+process.env.MONGODBPASSWORD+"@cluster0-kp0gc.mongodb.net/test?retryWrites=true&w=majority", {useNewUrlParser:true,useUnifiedTopology:true}).then(()=>{
     console.log("connected to DB");
 }).catch(err=>{
     console.log("ERROR ",err.message);
 });
+app.set("view engine","ejs");
+app.use(express.static(__dirname+"/public"));           //tells express to serve from the public folder too
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(methodOverride("_method"));
+app.use(flash());
+mongoose.set('useFindAndModify',false);
+
 
 //moment js config
 app.locals.moment= require("moment");
