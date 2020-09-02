@@ -30,6 +30,7 @@ app.use(methodOverride("_method"));
 app.use(flash());
 mongoose.set('useFindAndModify',false);
 
+
 //moment js config
 app.locals.moment= require("moment");
 
